@@ -38,6 +38,8 @@ export default {
   gap: 16px;
 }
 
+
+
 .empty-state {
   text-align: center;
 }

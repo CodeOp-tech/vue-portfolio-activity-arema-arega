@@ -57,10 +57,12 @@ export default {
 </script>
 
 <style>
+
 div{
-  
   align-items: center;
 }
+
+
 
 h1{
 color: rgb(255, 255, 255);
