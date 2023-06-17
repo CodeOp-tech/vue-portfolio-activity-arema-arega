@@ -68,7 +68,7 @@ export default {
       this.title = ''
       this.description = ''
       this.image = ''
-      this.isClicked = false;
+      
       
     }
   }
@@ -80,7 +80,7 @@ export default {
 
 .fondo{
   background-color: rgb(0, 217, 255);
-  border: 200p;
+  border: 200px;
 }
 
 

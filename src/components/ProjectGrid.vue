@@ -1,12 +1,15 @@
 <template>
- 
-  <div v-if="projects.length > 0" class="grid">
-    <project-item v-for="project in projects" :key="project.title" :project="project" />
-  </div>
+  <div>
+    
 
-  <div class="empty-state" v-else>
-    <h2 class="empty-state__title">No Projects</h2>
-    <p class="empty-state__description">Add a Project to get started</p>
+    <div v-if="projects.length > 0" class="grid">
+      <ProjectItem v-for="project in projects" :key="project.title" :project="project" @add="handleSelected" />
+    </div>
+
+    <div class="empty-state" v-else>
+      <h2 class="empty-state__title">No Projects</h2>
+      <p class="empty-state__description">Add a Project to get started</p>
+    </div>
   </div>
 </template>
 
@@ -16,30 +19,17 @@ import ProjectItem from './ProjectItem.vue';
 export default {
   name: 'ProjectGrid',
   props: ['projects'],
-
   components: {
     ProjectItem,
   },
-
-  data() {
-    return {
-      selectedProject: null,
-    };
-  },
-
   methods: {
-    handleSelected(selectedProject) {
-      this.selectedProject = selectedProject;
-      console.log(selectedProject)
+    handleSelected(project) {
+      this.$emit('add2', project);
+      console.log(this.project);
     },
   },
- 
-}
+};
 </script>
-
-
-
-
 
 <style scoped>
 .grid {
@@ -70,4 +60,3 @@ export default {
   box-shadow: 7px 3px 35px 0px rgba(0, 0, 0, 0.2);
 }
 </style>
-

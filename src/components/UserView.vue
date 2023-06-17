@@ -1,38 +1,45 @@
 <template>
- <div>
+  <div>
     <div :class="{'text_user': true}">User View</div>
-   
+    <div :class="{'selected-project': true }">{{ selected }}</div>
+    <SelectedProject :selected="selected" />
 
-  
-    <div :class="{'selected-project': true }">{{ selectedProject }}</div>
-    <SelectedProject :selectedProject= "selectedProject" />
-  
     <h1>Portafolio list</h1>
 
     <div class="container">
-      
-      <ProjectGrid @add="handleSelected" :projects="projects" />
+      <ProjectGrid v-if="projects" :projects="projects" @add2="AddSelected"></ProjectGrid>
     </div>
-    
   </div>
- 
- </template>
-
+</template>
 
 <script>
+
 import ProjectGrid from './ProjectGrid.vue';
 import SelectedProject from './SelectedProject.vue';
+
 
 export default {
   name: 'UserView',
   props: ['projects'],
   components: {
-    ProjectGrid,
     SelectedProject,
+    ProjectGrid,
    
+},
+
+  data() {
+    return{
+    selected: null,
+    }
   },
 
-  
+
+methods: {
+    AddSelected(project) {
+    this.selected = project, 
+      console.log(this.selected)
+    }
+  }, 
   
   
 };
@@ -54,11 +61,7 @@ export default {
   width: 100%;
 }
 
-.main {
-  max-width: 1020px;
-  width: 100%;
-  margin: 0 auto;
-}
+
 .container {
   display: flex;
   gap: 16px;
