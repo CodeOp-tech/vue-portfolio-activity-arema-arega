@@ -1,7 +1,7 @@
 <template>
   <div>
     <div :class="{'text_user': true}">User View</div>
-    <div :class="{'selected-project': true }">{{ selected }}</div>
+    
     <SelectedProject :selected="selected" />
 
     <h1>Portafolio list</h1>
