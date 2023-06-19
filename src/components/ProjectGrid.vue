@@ -1,4 +1,5 @@
 <template>
+  <main> 
   <div>
     
 
@@ -11,6 +12,8 @@
       <p class="empty-state__description">Add a Project to get started</p>
     </div>
   </div>
+
+</main> 
 </template>
 
 <script>
@@ -32,11 +35,7 @@ export default {
 </script>
 
 <style scoped>
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
+
 
 
 

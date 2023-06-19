@@ -15,10 +15,10 @@
     <div class="text-field">
       <label for="project-creation-form-image">IMAGE</label>
       <input id="project-creation-form-image" v-model="image" type="url" name="image" @input="validateImage" />
-     
+      <p class="errorMessage" v-if="errorMessage">{{ errorMessage }}</p>
     </div>
 
-    <div class="button-group">
+    <div class="button-form-group">
       <button class= "button">SUBMIT</button>
      
     </div>
@@ -39,27 +39,38 @@ export default {
       title: "",
       description: "",
       image: "",
-      
+      errorMessage: '',
     };
   },
   methods: {
 
     validateImage() {
         const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
-        if (!urlRegex.test(this.image)) {
-          console.log('Invalid URL format');
+      if (!urlRegex.test(this.image)) {
+      
+        this.errorMessage = 'Invalid URL format';
+      } else {
+        this.errorMessage = '';  
         }
       },
 
    
 
-    handleSubmit() {
-      this.$emit('addProject', {
-        title: this.title,
-        description: this.description,
-        image: this.image
-      }
-      )
+      handleSubmit() {
+  if (this.title === "" || this.description === "" || this.image === "") {
+    this.errorMessage ='Please fill all the empty fields ';
+    return;
+  } else {
+
+  this.$emit('addProject', {
+    title: this.title,
+    description: this.description,
+    image: this.image
+  });
+}
+      
+      
+      
       
       
       this.reset()
@@ -78,42 +89,15 @@ export default {
 
 <style scoped>
 
-.fondo{
-  background-color: rgb(0, 217, 255);
-  border: 200px;
-}
 
-
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  
-}
-
-.text-field {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.button-group {
-  display: flex;
-  justify-content: center;
-}
 
 .button {
+  display: flex;
   background-color: #000000;
-  color: rgb(255, 255, 255);
-  appearance: none;
-  border: none;
-  padding: 0 16px;
-  font-size: 16px;
-  height: 42px;
-  border-radius: 8px;
-  cursor: pointer;
+  color: rgb(255, 255, 255); 
+  margin: auto;
 }
+
 
 .button:hover {
   background-color: #ff0000;

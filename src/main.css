@@ -1,5 +1,165 @@
-@media only screen and (max-width: 600px) {
-    body {
-      background-color: lightblue;
-    }
+
+
+@media only screen and (min-width: 640px) {
+  .main .div .text-field .grid .h1,
+  .main .div .text-field .grid .h2,
+  .main .div .button .fondo .container 
+  .errorMessage .item .item__image 
+  .item__description > * {
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    font-size: 5%;
+    align-self: center;
   }
+}
+
+
+
+/*
+
+Relation 128
+  sm: 640px; (128 * 5) / 50%
+  md: 768px; (128 * 6) / 60 %
+  lg: 1024px; (128 * 8) / 80 %
+  xl: 1280px; (128 * 10) / 100 %
+  2xl: 1536px;(128 * 12) / 120 %
+*/
+
+
+
+
+
+
+
+div{
+  align-items: center;
+}
+
+
+
+h1{
+font-family: 'Lilita One', sans-serif;
+color: rgb(255, 255, 255);
+background-image: url("https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2017/08/Alto-Campoo-Ski-Lift-Milky-Way-e1502733284583.jpg?fit=750%2C501&ssl=1")
+}
+
+h2{
+font-family: 'Lilita One', sans-serif;
+color: rgb(255, 255, 255);
+background-image: url("https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2017/08/Alto-Campoo-Ski-Lift-Milky-Way-e1502733284583.jpg?fit=750%2C501&ssl=1")
+}
+
+.text-field {
+  font-family: 'Lilita One', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.errorMessage{
+  color: rgb(246, 255, 0);
+  background-color: black;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  font-family: 'Lilita One', sans-serif;
+}
+
+
+
+.button{
+    
+    justify-content: center;
+    appearance: none;
+    border: none;
+    padding: 10 100px;
+    font-size: 16px;
+    height: 42px;
+    border-radius: 8px;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
+    cursor: pointer;
+    margin: 2px ;
+    font-family: 'Lilita One', sans-serif;
+    
+}
+
+.container {
+  display: flex;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container > * {
+  flex: 1;
+}
+
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+  width: 100%;
+  
+}
+
+.item__image {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  object-fit: cover;
+  border-radius: 16px;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
+  
+
+
+}
+
+.item__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+.item__title {
+  margin: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item__description {
+  margin: 0;
+}
+
+
+.fondo{
+  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 217, 255);
+  
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+}
+
+
+  

@@ -1,15 +1,17 @@
 <template>
+ <main>
   <div>
     <div :class="{'text_user': true}">User View</div>
     
     <SelectedProject :selected="selected" />
 
-    <h1>Portafolio list</h1>
+    <h2>PROJECTS list</h2>
 
     <div class="container">
       <ProjectGrid v-if="projects" :projects="projects" @add2="AddSelected"></ProjectGrid>
     </div>
   </div>
+ </main>
 </template>
 
 <script>
@@ -53,23 +55,8 @@ methods: {
 
 }
 
-.selected-project{
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  overflow: hidden;
-  width: 100%;
-}
 
 
-.container {
-  display: flex;
-  gap: 16px;
-}
-
-.container > * {
-  flex: 1;
-}
 </style>
 
 
