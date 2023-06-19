@@ -8,7 +8,7 @@
     <h2>PROJECTS list</h2>
 
     <div class="container">
-      <ProjectGrid v-if="projects" :projects="projects" @add2="AddSelected"></ProjectGrid>
+      <ProjectGrid v-if="projects" :projects="projects" @add2="addSelected"></ProjectGrid>
     </div>
   </div>
  </main>
@@ -37,7 +37,7 @@ export default {
 
 
 methods: {
-    AddSelected(project) {
+    addSelected(project) {
     this.selected = project, 
       console.log(this.selected)
     }

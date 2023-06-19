@@ -18,6 +18,8 @@
 
 /*
 
+font-size = 1 rem del HTML para el texto // 1 em equivalente al font size del padre
+
 Relation 128
   sm: 640px; (128 * 5) / 50%
   md: 768px; (128 * 6) / 60 %

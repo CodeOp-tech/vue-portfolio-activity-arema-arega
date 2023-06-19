@@ -45,14 +45,15 @@ export default {
   methods: {
 
     validateImage() {
-        const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+      const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
       if (!urlRegex.test(this.image)) {
-      
-        this.errorMessage = 'Invalid URL format';
+       this.errorMessage = 'Invalid URL format';
       } else {
         this.errorMessage = '';  
-        }
-      },
+
+      }
+
+    },
 
    
 
